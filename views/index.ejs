@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>ViteCafe</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Leckerli+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/2b49b78d23.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <div class="container">
+       <!-------------------header--------------->
+  <header>
+    <section class="logo">
+      <img src="img/logo.jpg"  />
+    </section>
+
+    <section class="accountBtns">
+
+    <a href="/login"><button class="btn"> Sign In </button> </a>
+    <a href="/signup"><button class="btn"> New Barista</button> </a>
+  </section>
+</header>
+
+    <!----------Menu and order summary-------->
+   <h1>Vite Cafe</h1> 
+<div class="menu">
+  <h2>
+    Menu
+   </h2>
+    <form
+    class="orderForm1"
+    action="/orders"
+    method="POST"
+  >
+  <section class="info">
+  <input type="text" placeholder="Customer" name="name">  
+  <input type="text" placeholder="Barista" name="barista">  
+  <br/>
+  </section>
+  <section class="size">
+  <label for = "size"> <i class="fa-solid fa-cup-togo"></i>Size:</label>
+  <select id="size" name="size">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+    <option value="xLarge"> XLLarge</option>
+  </select>
+  </section>
+
+  <fieldset>
+    <legend><i class="fa-coffee-pot"></i>Drink Type:</legend>
+
+    <div>
+      <input type="checkbox" name="type" value="expresso">
+      <label for="expresso">Expresso</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="type" value="americano">
+      <label for="americano"> Americano </label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="type" value="latte">
+      <label for="latte"> Latte </label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="type" value="cappuccino">
+      <label for="cappuccino">Cappucino</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="type" value="icecoffee">
+      <label for="icecoffee">Iced Coffee</label>
+    </div>
+
+  </fieldset>
+
+
+  <fieldset>
+    <legend><i class="fa-solid fa-cow"></i>Dairy and NonDairy Options :</legend>
+
+    <div>
+      <input type="checkbox" id="milk" name="add" value="milk">
+     <label for="milk">Whole Milk</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="fatfree" name="add" value="fatFreeMilk">
+      <label for="fatfree">Fat Free Milk</label>
+
+    </div>
+
+    <div>
+      <input type="checkbox" id="oat" name="add" value="oat">
+      <label for="oat">Oat Milk</label>
+
+    </div>
+
+    <div>
+      <input type="checkbox" id="almond" name="add" value="almond">
+      <label for="almond">Almond Milk</label>
+
+    </div>
+
+  </fieldset>
+
+  <fieldset>
+    <legend><i class="fa-solid fa-candy"></i>Sweetners:</legend>
+
+    <div>
+      <input type="checkbox" id="splenda" name="add" value="splenda">
+      <label for="splenda"> Splenda</label>
+    </div>
+    <div>
+      <input type="checkbox" id="sugar" name="add" value="caneSugar">
+    <label for="sugar"> Cane Sugar</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><i class="fa-solid fa-stars"></i>Flavoring:</legend>
+ <div>
+      <input type="checkbox" id="vanilla" name="add" value="vanilla">
+      <label for="vanilla"> Vanilla</label>
+ </div>
+
+ <div>
+      <input type="checkbox" id="hazelnut" name="add" value="hazelnut">
+      <label for="hazelnut"> Hazelnut</label>
+ </div>
+
+ <div>
+  <input type="checkbox" id="carmel" name="add" value="carmel">
+  <label for="carmel"> Carmel</label>
+
+ </div>
+
+</fieldset>
+
+<fieldset>
+  <legend><i class="fa-solid fa-soft-serve"></i>    Toppings:</legend>
+
+  <div>
+    <input type="checkbox" id="cream" name="add" value="whippedCream">
+    <label for="ceam"> Whipped Cream</label>
+  
+   </div>
+
+   <div>
+    <input type="checkbox" id="carmelDrizzle" name="add" value="carmelDrizzle">
+    <label for="carmelDrizzle"> Carmel Drizzle</label>
+  
+   </div>
+</fieldset><br/>
+
+  <button class="btn btnBottom" type="submit">Place Order</button>
+
+    </form>
+  </div>
+
+</html>
