@@ -1,6 +1,4 @@
 
-
-
 var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 2032;
@@ -8,6 +6,8 @@ const MongoClient = require('mongodb').MongoClient
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
+const serverless = require("serverless-http");
+const router = express.Router();
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
@@ -16,6 +16,17 @@ var configDB = require('./config/database.js');
 const database = require('../baristaApp-first/config/database.js');
 
 var db
+
+router.get("/", (req, res) => {
+  res.json({
+    hello: "hi!"
+  });
+});
+
+app.use(`/.netlify/functions/api`, router);
+
+module.exports = app;
+module.exports.handler = serverless(app);
 
 // configuration ===============================================================
 mongoose.connect(configDB.url,{useNewUrlParser: true, useUnifiedTopology:true}, (err, database) => {
@@ -60,3 +71,5 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 // launch ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);
+
+
